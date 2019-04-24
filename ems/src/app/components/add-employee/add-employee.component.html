@@ -1,0 +1,42 @@
+<h2>Add Employee</h2>>
+<form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+  <input type="text" formControlName="firstName" id="firstName" name="firstName" placeholder="First Name">
+  <div *ngIf="submitted && addForm.controls.firstName.errors" class="error">
+    <div class="text-danger" *ngIf="addForm.controls.firstName.errors.required" class="error">
+      First Name is required...
+    </div>
+  </div>
+  <br>
+  <input type="text" formControlName="lastName" id="lastName" name="lastName" placeholder="Last Name">
+  <div *ngIf="submitted && addForm.controls.lastName.errors" class="error">
+    <div class="text-danger" *ngIf="addForm.controls.lastName.errors.required" class="error">
+      Last Name is required...
+    </div>
+  </div>
+  <br>
+  <input type="email" formControlName="email" id="email" name="email" placeholder="EamailAddress">
+  <div *ngIf="submitted && addForm.controls.email.errors" class="error">
+    <div class="text-danger" *ngIf="addForm.controls.email.errors.required" class="error">
+      email is required...
+    </div>
+  </div>
+  <br>
+  <input type="age" formControlName="age" id="age" name="age" placeholder="Age">
+  <div *ngIf="submitted && addForm.controls.age.errors" class="error">
+    <div class="text-danger" *ngIf="addForm.controls.age.errors.required" class="error">
+      age is required...
+    </div>
+  </div>
+  <br>
+  <input type="salary" formControlName="salary" id="salary" name="salary" placeholder="Salary">
+  <div *ngIf="submitted && addForm.controls.salary.errors" class="error">
+    <div class="text-danger" *ngIf="addForm.controls.salary.errors.required" class="error">
+      salary is required...
+    </div>
+  </div>
+  <br>
+  <button>Save</button>&nbsp;&nbsp;
+  <button type="reset">Cancle</button>
+
+</form>
